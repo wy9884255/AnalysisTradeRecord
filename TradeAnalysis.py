@@ -6,12 +6,15 @@ def AnalysisTradeData(df):
     buy_price = []
     sell_price = []
     for index, row in df.iterrows():
-        stock_code.append(str(row['证券代码']))
         name = row['证券名称']
         op = row['操作']
         if(op != '证券买入'):
             continue
         stock_name.append(name)
+        code = str(row['证券代码'])
+        while len(code) != 6:
+            code = "0"+code
+        stock_code.append(code)
         buy_date.append(str(row['成交日期']))
         buy_price.append(row['成交均价'])
         for index2, row2 in df.iterrows():

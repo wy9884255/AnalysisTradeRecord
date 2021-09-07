@@ -1,5 +1,5 @@
 from TradeAnalysis import *
-from GraphOutput import *
+from Output import *
 import pandas as pd
 
 if __name__ == "__main__":
