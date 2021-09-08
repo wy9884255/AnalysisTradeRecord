@@ -24,4 +24,8 @@ def AnalysisTradeData(df):
                 sell_date.append(str(row2['成交日期']))
                 sell_price.append(row2['成交均价'])
                 break
+            if index2 == len(df) - 1:
+                sell_date.append("null")
+                sell_price.append("null")
+
     return stock_code, stock_name, buy_date, sell_date, buy_price, sell_price
